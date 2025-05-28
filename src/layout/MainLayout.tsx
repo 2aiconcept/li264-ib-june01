@@ -22,7 +22,7 @@ const MainLayout = () => {
         </aside>
 
         {/* Zone de contenu principale - prend l'espace restant */}
-        <main className="flex-grow-1 bg-light p-4 overflow-auto">
+        <main className="flex-grow-1 bg-white p-4 overflow-auto">
           <Outlet />
         </main>
       </div>

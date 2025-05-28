@@ -1,0 +1,4 @@
+nav .active,
+nav a:hover {
+  background: var(--bs-primary);
+}

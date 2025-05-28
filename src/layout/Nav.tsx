@@ -1,5 +1,6 @@
 // src/layout/Nav.tsx
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
+import "./Nav.css";
 
 export const Nav = () => {
   return (
@@ -9,12 +10,10 @@ export const Nav = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `nav-link text-white px-3 py-2 rounded ${
-                isActive ? "bg-primary" : ""
-              }`
+              `nav-link text-white   rounded ${isActive ? "active" : ""}`
             }
           >
-            🏠 Dashboard
+            Dashboard
           </NavLink>
         </li>
         <li className="nav-item mb-2">
@@ -22,20 +21,24 @@ export const Nav = () => {
             to="/orders"
             className={({ isActive }) =>
               `nav-link text-white px-3 py-2 rounded ${
-                isActive ? "bg-primary" : ""
+                isActive ? "active" : ""
               }`
             }
           >
-            📦 Commandes
+            Commandes
           </NavLink>
         </li>
         <li className="nav-item mb-2">
-          <span
-            className="nav-link text-white-50 px-3 py-2 rounded text-decoration-none"
-            style={{ cursor: "not-allowed" }}
+          <NavLink
+            to="/customers"
+            className={({ isActive }) =>
+              `nav-link text-white px-3 py-2 rounded ${
+                isActive ? "active" : ""
+              }`
+            }
           >
-            👥 Clients <small>(bientôt)</small>
-          </span>
+            Clients
+          </NavLink>
         </li>
       </ul>
     </nav>
