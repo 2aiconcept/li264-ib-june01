@@ -1,11 +1,47 @@
 // src/features/dashboard/pages/DashboardPage.tsx
 
+import { NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
 const DashboardPage = () => {
   return (
     <div className="container-fluid">
       <h4>Laboratoire</h4>
-
       <hr />
+      <ul className="nav">
+        <li className="nav-item">
+          <NavLink
+            to="jsxlab"
+            className={({ isActive }) =>
+              `nav-link   rounded ${isActive ? "active" : ""}`
+            }
+          >
+            Le Jsx
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="jsxlab"
+            className={({ isActive }) =>
+              `nav-link   rounded ${isActive ? "active" : ""}`
+            }
+          >
+            Nouveautés ES6+
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="jsxlab"
+            className={({ isActive }) =>
+              `nav-link   rounded ${isActive ? "active" : ""}`
+            }
+          >
+            Les hooks
+          </NavLink>
+        </li>
+      </ul>
+      <hr />
+      <Outlet />
     </div>
   );
 };

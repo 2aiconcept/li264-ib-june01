@@ -8,7 +8,7 @@ export const Nav = () => {
       <ul className="nav flex-column">
         <li className="nav-item mb-2">
           <NavLink
-            to="/"
+            to="/dashboard"
             className={({ isActive }) =>
               `nav-link text-white   rounded ${isActive ? "active" : ""}`
             }
