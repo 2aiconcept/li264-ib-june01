@@ -5,6 +5,7 @@ import DashboardPage from "./features/dashbord/pages/DashbordPage";
 import JsxLab from "./features/dashbord/components/JsxLab";
 import ES6Lab from "./features/dashbord/components/ES6Lab";
 import HooksLab from "./features/dashbord/components/HooksLab";
+import { OrdersRoutes } from "./features/orders/orders.routes";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
           />
         ),
       },
+      OrdersRoutes,
       {
         path: "dashboard",
         Component: DashboardPage, // <- s'affiche à la place du <Outlet /> principal qui se trouve sur App.tsx (en réalité sur MainLayout.txs)
