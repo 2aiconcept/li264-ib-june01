@@ -1,4 +1,4 @@
-export const JsxLab = () => {
+const JsxLab = () => {
   // Variables pour les exemples
   const userName = "Jean Dupont";
   const userAge = 25;
@@ -78,3 +78,5 @@ export const JsxLab = () => {
     </>
   );
 };
+
+export default JsxLab;

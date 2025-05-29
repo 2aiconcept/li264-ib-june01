@@ -2,7 +2,8 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import App from "./App";
 import DashboardPage from "./features/dashbord/pages/DashbordPage";
-import { JsxLab } from "./features/dashbord/components/JsxLab";
+import JsxLab from "./features/dashbord/components/JsxLab";
+import ES6Lab from "./features/dashbord/components/ES6Lab";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
           {
             path: "jsxlab",
             Component: JsxLab, // <- s'affiche à la place de <Outlet /> secondaire qui se trouve sur DashboardPage.tsx
+          },
+          {
+            path: "es6lab",
+            Component: ES6Lab, // <- s'affiche à la place de <Outlet /> secondaire qui se trouve sur DashboardPage.tsx
           },
         ],
       },
