@@ -31,7 +31,7 @@ const DashboardPage = () => {
         </li>
         <li className="nav-item">
           <NavLink
-            to="jsxlab"
+            to="hookslab"
             className={({ isActive }) =>
               `nav-link   rounded ${isActive ? "active" : ""}`
             }

@@ -4,6 +4,7 @@ import App from "./App";
 import DashboardPage from "./features/dashbord/pages/DashbordPage";
 import JsxLab from "./features/dashbord/components/JsxLab";
 import ES6Lab from "./features/dashbord/components/ES6Lab";
+import HooksLab from "./features/dashbord/components/HooksLab";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
           {
             path: "es6lab",
             Component: ES6Lab, // <- s'affiche à la place de <Outlet /> secondaire qui se trouve sur DashboardPage.tsx
+          },
+          {
+            path: "hookslab",
+            Component: HooksLab, // <- s'affiche à la place de <Outlet /> secondaire qui se trouve sur DashboardPage.tsx
           },
         ],
       },
