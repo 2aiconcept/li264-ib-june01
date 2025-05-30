@@ -3,7 +3,7 @@
 import { OrderStates } from "../enums/OrderStates.enum";
 
 export interface OrderI {
-  id?: string;
+  id: string;
   title: string;
   amount: number;
   status: OrderStates; // Utilisation de notre enum

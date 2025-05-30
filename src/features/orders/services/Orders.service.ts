@@ -22,6 +22,7 @@ export const getAllOrders = async (): Promise<OrderI[]> => {
 export const getOrderById = async (id: string): Promise<OrderI | null> => {
   try {
     const response = await httpClient.get<OrderI>(`${ORDERS_ENDPOINT}/${id}`);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error) && error.response?.status === 404) {
