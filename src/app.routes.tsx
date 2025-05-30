@@ -1,7 +1,7 @@
 // src/app.routes.tsx
 import { createBrowserRouter, Navigate } from "react-router";
 import App from "./App";
-import DashboardPage from "./features/dashbord/pages/DashbordPage";
+import DashboardPage from "./features/dashbord/pages/DashboardPage";
 import JsxLab from "./features/dashbord/components/JsxLab";
 import ES6Lab from "./features/dashbord/components/ES6Lab";
 import HooksLab from "./features/dashbord/components/HooksLab";

@@ -5,16 +5,14 @@
       "title": "Commande laptop",
       "amount": 1200,
       "status": "pending",
-      "customerId": "customer-1",
-      "createdAt": "2025-01-15T10:00:00.000Z"
+      "customerId": "customer-1"
     },
     {
       "id": "2",
       "title": "Commande écran",
       "amount": 300,
       "status": "completed",
-      "customerId": "customer-2",
-      "createdAt": "2025-01-16T14:30:00.000Z"
+      "customerId": "customer-2"
     }
   ],
   "customers": [
