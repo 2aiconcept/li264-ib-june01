@@ -1,50 +1,65 @@
-import { useEffect, useState } from "react";
-import type { OrderI } from "../types/Order.interface";
-import { ordersService } from "../services/Orders.service";
+// import { useEffect, useState } from "react";
+// import type { OrderI } from "../types/Order.interface";
+// import { ordersService } from "../services/Orders.service";
 import { OrderStates } from "../enums/OrderStates.enum";
 import { useNavigate } from "react-router-dom";
+import { useOrders } from "../hooks/useOrders";
+// import type { OrderI } from "../types/Order.interface";
 
 const OrdersListPage = () => {
-  const [orders, setOrders] = useState<OrderI[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
+  //   const [orders, setOrders] = useState<OrderI[]>([]);
+  //   const [error, setError] = useState<string | null>(null);
+  //   const [loading, setLoading] = useState(true);
+
+  //   le hook return un objet donc desctucturing d'objet
+  const { orders, loading, error, deleteOrder } = useOrders();
+
   const navigate = useNavigate();
 
   const handleDelete = async (id: string) => {
     if (window.confirm("Do you realy want to delete this order ?")) {
-      setLoading(true);
-      setError(null);
-      //   alternative gestion des promesses
-      try {
-        await ordersService.delete(id);
-        setOrders((orders) => orders.filter((order) => order.id !== id));
-      } catch (error) {
-        setError(error instanceof Error ? error.message : String(error));
-      } finally {
-        setLoading(false);
-      }
-      //   ordersService
-      //     .delete(id)
-      //     .then(() =>
-      //       setOrders((orders) => orders.filter((order) => order.id !== id))
-      //     )
-      //     .catch((error) => setError(error))
-      //     .finally(() => setLoading(false));
+      await deleteOrder(id);
+      //   le code ici s'executera après la résolution de la promesse grace au async await
     }
   };
 
+  //   const handleDelete = async (id: string) => {
+  //     if (window.confirm("Do you realy want to delete this order ?")) {
+  //         setLoading(true);
+  //         setError(null);
+  //         //   alternative gestion des promesses
+  //         try {
+  //           await ordersService.delete(id);
+  //           setOrders((fetchOrders) =>
+  //             fetchOrders.filter((order) => order.id !== id)
+  //           );
+  //         } catch (err) {
+  //           setError(err instanceof Error ? err.message : String(err));
+  //         } finally {
+  //           setLoading(false);
+  //         }
+  //         ordersService
+  //           .delete(id)
+  //           .then(() =>
+  //             setOrders((orders) => orders.filter((order) => order.id !== id))
+  //           )
+  //           .catch((error) => setError(error))
+  //           .finally(() => setLoading(false));
+  //     }
+  //   };
+
   // useEffect pour call api au montage et maj stateOrders avec res api
-  useEffect(() => {
-    setLoading(true);
-    setError(null);
-    ordersService
-      .getAll()
-      .then((orders) => setOrders(orders))
-      .catch((error) =>
-        setError(error instanceof Error ? error.message : String(error))
-      )
-      .finally(() => setLoading(false));
-  }, []);
+  //   useEffect(() => {
+  //     setLoading(true);
+  //     setError(null);
+  //     ordersService
+  //       .getAll()
+  //       .then((fetchOrders) => setOrders(fetchOrders))
+  //       .catch((err) =>
+  //         setError(err instanceof Error ? err.message : String(err))
+  //       )
+  //       .finally(() => setLoading(false));
+  //   }, []);
   return (
     <>
       <div className="container-fluid d-flex justify-content-between border-bottom pb-3">

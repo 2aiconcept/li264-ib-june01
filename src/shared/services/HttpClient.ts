@@ -1,4 +1,4 @@
-// src/HttpClient.ts
+// src/shared/services/HttpClient.ts
 import axios from "axios";
 // https://axios-http.com/fr/docs/instance (lien vers la doc)
 

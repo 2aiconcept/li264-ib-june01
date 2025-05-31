@@ -6,6 +6,7 @@ import JsxLab from "./features/dashbord/components/JsxLab";
 import ES6Lab from "./features/dashbord/components/ES6Lab";
 import HooksLab from "./features/dashbord/components/HooksLab";
 import { OrdersRoutes } from "./features/orders/orders.routes";
+import NotFoundPage from "./features/notFound/pages/NotFoundPage";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
             Component: HooksLab, // <- s'affiche à la place de <Outlet /> secondaire qui se trouve sur DashboardPage.tsx
           },
         ],
+      },
+      {
+        path: "*",
+        Component: NotFoundPage, // <- s'affiche à la place de <Outlet /> principale
       },
     ],
   },

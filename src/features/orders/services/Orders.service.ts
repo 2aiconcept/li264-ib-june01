@@ -1,5 +1,5 @@
 import axios from "axios";
-import httpClient from "../../../HttpClient";
+import httpClient from "../../../shared/services/HttpClient";
 import type { OrderI } from "../types/Order.interface";
 
 const ORDERS_ENDPOINT = "/orders";
