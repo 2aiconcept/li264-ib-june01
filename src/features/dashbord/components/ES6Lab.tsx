@@ -78,9 +78,9 @@ const ES6Lab = () => {
         <div className="card-body">
           <p className="card-text">Syntaxe.</p>
           Function syntaxe
-          <pre className="bg-light p-2 mb-3 border border-primary">
+          <div className="bg-light p-2 mb-3 border border-primary lang-js">
             <code>{`function () {}`}</code>
-          </pre>
+          </div>
           <br />
           Arrow function syntaxe
           <pre className="bg-light p-2 mb-3 border border-primary">

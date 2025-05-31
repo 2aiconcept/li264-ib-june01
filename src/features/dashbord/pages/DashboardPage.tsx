@@ -31,6 +31,16 @@ const DashboardPage = () => {
         </li>
         <li className="nav-item">
           <NavLink
+            to="propslab"
+            className={({ isActive }) =>
+              `nav-link   rounded ${isActive ? "active" : ""}`
+            }
+          >
+            Les Props
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
             to="hookslab"
             className={({ isActive }) =>
               `nav-link   rounded ${isActive ? "active" : ""}`

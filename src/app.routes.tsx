@@ -1,12 +1,13 @@
 // src/app.routes.tsx
 import { createBrowserRouter, Navigate } from "react-router";
 import App from "./App";
-import DashboardPage from "./features/dashbord/pages/DashboardPage";
-import JsxLab from "./features/dashbord/components/JsxLab";
-import ES6Lab from "./features/dashbord/components/ES6Lab";
-import HooksLab from "./features/dashbord/components/HooksLab";
+// import DashboardPage from "./features/dashbord/pages/DashboardPage";
+// import JsxLab from "./features/dashbord/components/JsxLab";
+// import ES6Lab from "./features/dashbord/components/ES6Lab";
+// import HooksLab from "./features/dashbord/components/HooksLab";
 import { OrdersRoutes } from "./features/orders/orders.routes";
 import NotFoundPage from "./features/notFound/pages/NotFoundPage";
+import { DashboardRoutes } from "./features/dashbord/dashboard.routes";
 
 export const router = createBrowserRouter([
   {
@@ -23,24 +24,7 @@ export const router = createBrowserRouter([
         ),
       },
       OrdersRoutes,
-      {
-        path: "dashboard",
-        Component: DashboardPage, // <- s'affiche à la place du <Outlet /> principal qui se trouve sur App.tsx (en réalité sur MainLayout.txs)
-        children: [
-          {
-            path: "jsxlab",
-            Component: JsxLab, // <- s'affiche à la place de <Outlet /> secondaire qui se trouve sur DashboardPage.tsx
-          },
-          {
-            path: "es6lab",
-            Component: ES6Lab, // <- s'affiche à la place de <Outlet /> secondaire qui se trouve sur DashboardPage.tsx
-          },
-          {
-            path: "hookslab",
-            Component: HooksLab, // <- s'affiche à la place de <Outlet /> secondaire qui se trouve sur DashboardPage.tsx
-          },
-        ],
-      },
+      DashboardRoutes,
       {
         path: "*",
         Component: NotFoundPage, // <- s'affiche à la place de <Outlet /> principale
